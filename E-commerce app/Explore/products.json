@@ -1,0 +1,47 @@
+
+[
+    {
+        "name": "Nike Shoes",
+        "price": "$99",
+        "imageName": "photo1",
+        "Description": "High-quality running shoes from Nike.",
+        "rating": 4.8,
+        "isFavorite": true,
+        "countInStock": 20,
+        "brand": "Nike",
+        "size": ["S", "M", "L"]
+    },
+    {
+        "name": "Adidas Hoodie",
+        "price": "$79",
+        "imageName": "photo2",
+        "Description": "Comfortable Adidas hoodie for all-day wear.",
+        "rating": 4.6,
+        "isFavorite": false,
+        "countInStock": 15,
+        "brand": "Adidas",
+        "size": ["M", "L", "XL"]
+    },
+    {
+        "name": "Puma Jacket",
+        "price": "$89",
+        "imageName": "photo3",
+        "Description": "Stylish Puma jacket for cold weather.",
+        "rating": 4.7,
+        "isFavorite": true,
+        "countInStock": 10,
+        "brand": "Puma",
+        "size": ["M", "L"]
+    },
+    {
+        "name": "Fila T-Shirt",
+        "price": "$49",
+        "imageName": "photo4",
+        "Description": "Casual Fila t-shirt for everyday wear.",
+        "rating": 4.5,
+        "isFavorite": false,
+        "countInStock": 25,
+        "brand": "Fila",
+        "size": ["S", "M", "L", "XL"]
+    }
+]

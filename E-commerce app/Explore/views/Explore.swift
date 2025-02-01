@@ -10,12 +10,8 @@ import SwiftUI
 struct Explore: View {
     @State private var searchText = ""
     @State private var brands = ["Adidas","Nike","Fila","Puma"]
-    let products = [
-        Product(name: "Nike Shoes", price: "$99", imageName: "photo"),
-        Product(name: "Adidas Hoodie", price: "$79", imageName: "photo"),
-        Product(name: "Puma Jacket", price: "$89", imageName: "photo"),
-        Product(name: "Fila T-Shirt", price: "$49", imageName: "photo")
-    ]
+    @ObservedObject var productData = ProductData() // Use ObservableObject
+
     var body: some View {
         NavigationView{
             VStack(alignment: .leading, spacing: 20) {
@@ -59,7 +55,7 @@ struct Explore: View {
                         .foregroundColor(.gray)
                     } .padding(.horizontal)
                     
-                    ProductView(products: products)
+                    ProductView(products: productData.products)
 
                 }
             }

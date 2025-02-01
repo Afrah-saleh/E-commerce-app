@@ -9,20 +9,21 @@ import SwiftUI
 
 // Reusable ProductScrollView component
 struct ProductView: View {
-    var products: [Product] // List of products
-    // Grid columns definition: Two items per row
+    var products: [Product]
+
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+
     var body: some View {
-        ScrollView { // Make it scrollable vertically
-            LazyVGrid(columns: columns, spacing: 15) { // Use a grid layout
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(products) { product in
                     VStack(alignment: .leading) {
-                        Image(systemName: product.imageName)
+                        Image(product.imageName)
                             .resizable()
-                            .frame(width: 100, height: 100)
+                            .frame(width: 150, height: 200)
                             .background(Color(.systemGray6))
                             .cornerRadius(10)
 
@@ -38,9 +39,9 @@ struct ProductView: View {
             }
             .padding(.horizontal)
         }
+        .onAppear {
+            print("🟢 Products received in ProductView: \(products)")
+        }
     }
 }
 
-//#Preview {
-//    ProductScrollView(products: <#[Product]#>)
-//}
