@@ -11,7 +11,7 @@ struct Explore: View {
     @State private var searchText = ""
     @State private var brands = ["Adidas","Nike","Fila","Puma"]
     @ObservedObject var productData = ProductData() // Use ObservableObject
-
+    @StateObject var cartViewModel = CartViewModel() // ✅ Create CartViewModel
     var body: some View {
         NavigationView{
             VStack(alignment: .leading, spacing: 20) {
@@ -55,19 +55,28 @@ struct Explore: View {
                         .foregroundColor(.gray)
                     } .padding(.horizontal)
                     
-                    ProductView(products: productData.products)
+                    ProductView(products: productData.products, cartViewModel: cartViewModel)
 
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    ToolBars(imageName: "list.bullet.indent")
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    ToolBars(imageName: "bag")
 
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: CartView(cartViewModel: cartViewModel)) {
+                        HStack {
+                            Image(systemName: "cart")
+                            Text("\(cartViewModel.cartItems.count)") // ✅ Convert Int to String
+
+                        }
+                        .padding(8)
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                    }
                 }
             }
+
+
             
         }
 

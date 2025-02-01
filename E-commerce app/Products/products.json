@@ -4,7 +4,7 @@
         "name": "Nike Shoes",
         "price": "$99",
         "imageName": "photo1",
-        "Description": "High-quality running shoes from Nike.",
+        "description": "High-quality running shoes from Nike.",
         "rating": 4.8,
         "isFavorite": true,
         "countInStock": 20,

@@ -12,16 +12,15 @@ struct ToolBars: View {
     var imageName: String
     var backgroundColor: Color = Color(.systemGray6) // Optional default background color
     var foregroundColor: Color = .black // Optional default foreground color
-
+    var action: () -> Void // ✅ Action closure
+    
     var body: some View {
-        Button(action: {
-            print("Pressed") // Executes the passed action
-        }) {
-            Image(systemName: imageName) // Use the dynamic image name
-                .foregroundColor(foregroundColor) // Customizable foreground color
-                .padding()
-                .background(backgroundColor) // Customizable background color
-                .cornerRadius(30)
-        }
+        Button(action: action) { // ✅ Use the action closure
+              Image(systemName: imageName)
+                  .foregroundColor(foregroundColor)
+                  .padding()
+                  .background(backgroundColor)
+                  .cornerRadius(30)
+          }
     }
 }
